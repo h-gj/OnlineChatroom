@@ -21,11 +21,11 @@ class ChatConsumer(WebsocketConsumer):
 
         msgs = list(
             Message.objects.filter(room_name=self.room_name).values('content', 'create_at')
-        )
+        )[-19:]
         self.send(text_data=json.dumps([
             {
                 'message': msg['content'],
-                'time':  msg['create_at'].strftime('%H:%M:%S')
+                'time':  msg['create_at'].strftime('%Y-%m-%d %H:%M:%S')
             } for msg in msgs
         ]))
 
