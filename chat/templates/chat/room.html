@@ -13,7 +13,7 @@
     <div class="col col-lg-6 offset-lg-3">
         <span class="alert alert-info form-control row">Chat Room: {{ room_name }}</span>
         <textarea class="form-control row" style="background-color: #a39cff; color: white" id="chat-log" rows="20"></textarea><br>
-        <input class="form-control row" id="chat-message-input" type="text"><br>
+        <input class="form-control row" id="chat-message-input" type="text" style="touch-action: none"><br>
         {{ room_name|json_script:"room-name" }}
         <input id="chat-message-submit" type="button" placeholder="Enter to send." class="btn btn-outline-info btn-lg form-control row" value="Biu~">
     </div>
